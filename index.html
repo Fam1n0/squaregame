@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Magic Square Game</title>
+    <style>
+        .a {
+            border-top: .1in solid green;
+            border-right: .1in solid blue;
+            border-bottom: .1in solid yellow;
+            border-left: .1in solid red;
+            transition: transform 0.5s; /* animation transition */
+        }
+        .b {
+            border-top: .1in solid red;
+            border-right: .1in solid green;
+            border-bottom: .1in solid blue;
+            border-left: .1in solid yellow;
+            transition: transform 0.5s;
+        }
+        .c {
+            border-top: .1in solid yellow;
+            border-right: .1in solid red;
+            border-bottom: .1in solid green;
+            border-left: .1in solid blue;
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body bgcolor="black">
+    <script>
+        function createCell(classType, content, depth) {
+            return `<td class='${classType}' onmouseover='moveTable(this, ${depth})'>${content}</td>`;
+        }
+
+
+        function createTable(depth) {
+            if (depth <= 0) return "";
+
+
+            const cellContent = createTable(depth-1);
+            
+            const row1 = createCell('a', cellContent, depth) + createCell('b', cellContent, depth) + createCell('c', cellContent, depth);
+            const row2 = createCell('b', cellContent, depth) + createCell('c', cellContent, depth) + createCell('a', cellContent, depth);
+            const row3 = createCell('c', cellContent, depth) + createCell('a', cellContent, depth) + createCell('b', cellContent, depth);
+
+
+            return "<table>" + "<tr>" + row1 + "</tr>" + "<tr>" + row2 + "</tr>" + "<tr>" + row3 + "</tr>" + "</table>";
+        }
+
+
+        function moveTable(element, depth) {
+            if(depth == 1) {
+                element.style.transform = 'translate(10px, 10px)'; // Move the table
+            } else if(depth == 2) {
+                element.style.transform = 'translate(20px, 20px)';
+            } else if(depth == 3) {
+                element.style.transform = 'translate(30px, 30px)';
+            }
+        }
+
+
+        document.write(createTable(3));
+    </script>
+</body>
+</html>
