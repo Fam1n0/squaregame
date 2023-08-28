@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json">
     <title>The Magic Square Game</title>
+
+    <!-- Link to the manifest.json -->
+    <link rel="manifest" href="manifest.json">
+
     <style>
         .a {
             border-top: .1in solid green;
@@ -29,16 +33,15 @@
         }
     </style>
 </head>
+
 <body bgcolor="black">
     <script>
         function createCell(classType, content, depth) {
             return `<td class='${classType}' onmouseover='moveTable(this, ${depth})'>${content}</td>`;
         }
 
-
         function createTable(depth) {
             if (depth <= 0) return "";
-
 
             const cellContent = createTable(depth-1);
             
@@ -46,10 +49,8 @@
             const row2 = createCell('b', cellContent, depth) + createCell('c', cellContent, depth) + createCell('a', cellContent, depth);
             const row3 = createCell('c', cellContent, depth) + createCell('a', cellContent, depth) + createCell('b', cellContent, depth);
 
-
             return "<table>" + "<tr>" + row1 + "</tr>" + "<tr>" + row2 + "</tr>" + "<tr>" + row3 + "</tr>" + "</table>";
         }
-
 
         function moveTable(element, depth) {
             if(depth == 1) {
@@ -60,9 +61,11 @@
                 element.style.transform = 'translate(30px, 30px)';
             }
         }
+    </script>
 
-
+    <script>
         document.write(createTable(3));
     </script>
 </body>
+
 </html>
