@@ -1,22 +1,21 @@
-﻿{
-  "name": "Interactive Squares",
-  "short_name": "Squares",
-  "description": "A fun interactive squares game",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#000",
-  "theme_color": "#3f51b5",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+{
+   "name": "The Magic Square Game",
+   "short_name": "MagicSquare",
+   "description": "The Magic Square Game",
+   "start_url": "/index.html",
+   "display": "standalone",
+   "background_color": "#000000",
+   "theme_color": "#000000",
+   "icons": [
+       {
+           "src": "icon-192x192.png",
+           "sizes": "192x192",
+           "type": "image/png"
+       },
+       {
+           "src": "icon-512x512.png",
+           "sizes": "512x512",
+           "type": "image/png"
+       }
+   ]
 }
