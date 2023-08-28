@@ -1,18 +1,17 @@
 {
-   "name": "The Magic Square Game",
-   "short_name": "MagicSquare",
-   "description": "The Magic Square Game",
-   "start_url": "/index.html",
-   "display": "standalone",
-   "background_color": "#000000",
-   "theme_color": "#000000",
-"icons": [
+  "name": "The Magic Square Game",
+  "short_name": "Magic Square",
+  "description": "An interactive Magic Square game.",
+  "display": "standalone",
+  "start_url": "https://fam1n0.github.io/squaregame/",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
     {
-        "src": "https://fam1n0.github.io/squaregame/icon-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
+      "src": "https://fam1n0.github.io/squaregame/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-]
-
-     
+  ]
 }
